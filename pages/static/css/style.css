@@ -1,0 +1,12 @@
+.secao-de-listagem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.secao-de-listagem article a{
+    color: deepblue;
+    font-size: 30px;
+}
+

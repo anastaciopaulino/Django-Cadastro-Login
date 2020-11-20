@@ -1,0 +1,19 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Loja Python{% endblock %}
+
+{% block content %}
+
+<section class="secao-de-listagem">
+    <article>
+        <h3>Perguntas</h3>
+        {% for post in object_list %}
+            <a href="detail/{{ post.slug  }}"> {{ post.title  }}</a>
+            <p><em>{{ post.created_at }}</em></p>
+            <p>{{ post.summary  }}</p>
+        {% endfor %}
+    </article>
+</section>
+{% endblock %}
+
