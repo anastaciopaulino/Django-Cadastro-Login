@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Loja Python{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    <p>Você tem certeza que deseja apagar?</p>
+    <input class="ii" type="submit" id="hg" value="Apagar">
+    <a href="{% url 'detail' post.slug %}">Cancelar</a>
+</form>
+{% endblock %}
+
+
+

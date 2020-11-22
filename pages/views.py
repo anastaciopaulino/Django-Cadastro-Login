@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView 
 from . models import Post
 
 from django.contrib.auth.decorators import login_required
@@ -26,3 +26,8 @@ class NewPost(CreateView):
     success_url = '/'
 
 
+@method_decorator(login_required, name="dispatch")
+class Deletar(DeleteView):
+    model = Post
+    template_name = 'deletar.html'
+    success_url = '/'

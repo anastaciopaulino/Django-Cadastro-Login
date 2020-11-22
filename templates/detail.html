@@ -12,6 +12,7 @@
         <p>{{ post.created_at }}</p>
         <p>{{ post.content  }}</p>
         <a href="{% url 'novo' %}">Novo</a>
+        <a href="{% url 'deletar' post.slug %}">Deletar</a>
     </article>
 </section>
 {% endblock %}

@@ -8,5 +8,13 @@
 .secao-de-listagem article a{
     color: deepblue;
     font-size: 30px;
+    padding: 35px;
 }
 
+form .ii{
+    background-color: red;
+    color: white;
+    padding: 7px;
+    border-radius: 4px;
+    border: 0px solid;
+}
