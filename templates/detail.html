@@ -13,6 +13,7 @@
         <p>{{ post.content  }}</p>
         <a href="{% url 'novo' %}">Novo</a>
         <a href="{% url 'deletar' post.slug %}">Deletar</a>
+        <a href="{% url 'editar' post.slug %}">Editar</a>
     </article>
 </section>
 {% endblock %}

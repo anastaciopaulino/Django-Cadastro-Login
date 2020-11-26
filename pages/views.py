@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, DeleteView 
+from django.views.generic import ListView, DetailView 
+from django.views.generic.edit import CreateView, DeleteView, UpdateView 
 from . models import Post
 
 from django.contrib.auth.decorators import login_required
@@ -31,3 +31,12 @@ class Deletar(DeleteView):
     model = Post
     template_name = 'deletar.html'
     success_url = '/'
+
+
+class UpdatePageView(UpdateView):
+    model = Post
+    template_name ='editar.html'
+    fields = '__all__'
+    success_url = '/'
+
+
