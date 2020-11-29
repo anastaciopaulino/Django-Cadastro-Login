@@ -22,8 +22,16 @@ class DetailPageView(DetailView):
 class NewPost(CreateView):
     model = Post
     template_name = 'novo.html'
-    fields = '__all__'
+    fields = ('title', 'summary', 'content')
     success_url = '/'
+
+    def form_valid(self, form):
+        self.object = form.save(commit=False)
+        self.object.author = self.request.user
+
+        self.object.save()
+
+        return super().form_valid(form)
 
 
 @method_decorator(login_required, name="dispatch")
@@ -31,6 +39,10 @@ class Deletar(DeleteView):
     model = Post
     template_name = 'deletar.html'
     success_url = '/'
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(author_id=self.request.user.id)
 
 
 class UpdatePageView(UpdateView):
